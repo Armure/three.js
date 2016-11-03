@@ -14,15 +14,8 @@
 			}
 
 			#info {
-				position: absolute;
-				padding: 10px;
-				width: 100%;
-				text-align: center;
-			}
-
-			a {
-				text-decoration: underline;
-				cursor: pointer;
+			    height: 0;
+			    width: 0;
 			}
 
 		</style>
@@ -30,17 +23,12 @@
 
 	<body>
 		<div id="info">Simple Cloth Simulation<br/>
-			Verlet integration with relaxed constraints<br/>
-			<a onclick="wind = !wind;">Wind</a> |
-			<a onclick="sphere.visible = !sphere.visible;">Ball</a> |
-			<a onclick="togglePins();">Pins</a>
 		</div>
 
 		<script src="../build/three.js"></script>
 
 		<script src="js/Detector.js"></script>
 		<script src="js/controls/OrbitControls.js"></script>
-		<script src="js/libs/stats.min.js"></script>
 
 		<script src="js/Cloth.js"></script>
 
@@ -288,9 +276,6 @@
 
 				// performance monitor
 
-				stats = new Stats();
-				container.appendChild( stats.dom );
-
 				//
 
 				window.addEventListener( 'resize', onWindowResize, false );
@@ -323,7 +308,6 @@
 
 				simulate( time );
 				render();
-				stats.update();
 
 			}
 
